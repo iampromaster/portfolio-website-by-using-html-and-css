@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+}
+.header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0;
+  animation: slideTop 0.4s linear forwards;
+}
+
+.header .nav a.active {
+   color: #0b8c4c;
+}
+
+.header .nav a {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 30px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 0.4s linear forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.header .nav a:hover {
+  color: #0b8c4c;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+}
+
+.home .content {
+  max-width: 550px;
+}
+.home .content h1 {
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0;
+  animation: slideRight .4s linear forwards;
+  animation-delay: .5s;
+}
+.home .content h3 {
+  font-size: 30px;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideLeft .4s linear forwards;
+  animation-delay: .8s;
+}
+.home .content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+.home .content .btn {
+  width: 180px;
+  height: 45px;
+  background: #0b8c4c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+.home .content .btn:hover {
+  background: #0f643a;
+}
+.home .icons a {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  color: #fff;
+  border: 3px solid #0b8c4c;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  opacity: 0;
+}
+.home .icons a:nth-child(1){
+  animation: slideDown 0.4s linear forwards;
+  animation-delay: 1s;
+}
+.home .icons a:nth-child(2){
+  animation: slideRight 0.4s linear forwards;
+  animation-delay: 1s;
+}
+.home .icons a:nth-child(3){
+  animation: slideTop 0.4s linear forwards;
+  animation-delay: 1s;
+}
+
+.home .icons a::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  background: #0b8c4c;
+  z-index: -1;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.home .icons a:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+.home .image {
+  width: 370px;
+  height: 370px;
+}
+.home .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 7px solid #0b8c4c;
+  transition: 0.3s;
+}
+.home .image img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
